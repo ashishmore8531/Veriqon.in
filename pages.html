@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QA Testing Services</title>
+
+<style>
+:root {
+  --black: #0D0D0D;
+  --dark: #1A1A1A;
+  --red: #FF3B3B;
+  --white: #FFFFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: var(--dark);
+  position: sticky;
+  top: 0;
+}
+
+nav a {
+  color: var(--white);
+  margin-left: 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+nav a:hover {
+  color: var(--red);
+}
+
+.page {
+  display: none;
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.active {
+  display: block;
+}
+
+h1, h2 {
+  margin-bottom: 20px;
+}
+
+.btn {
+  background: var(--red);
+  padding: 12px 20px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.btn:hover {
+  background: #cc2e2e;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--dark);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--dark);
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div><b style="color:var(--red)">QA Services</b></div>
+  <div>
+    <a onclick="showPage('home')">Home</a>
+    <a onclick="showPage('services')">Services</a>
+    <a onclick="showPage('process')">Process</a>
+    <a onclick="showPage('about')">About</a>
+    <a onclick="showPage('contact')">Contact</a>
+  </div>
+</nav>
+
+<!-- HOME -->
+<div id="home" class="page active">
+  <h1>Delivering Bug-Free Software</h1>
+  <p>Professional QA testing services to ensure quality, performance, and security.</p>
+  <button class="btn" onclick="showPage('contact')">Get Free QA Audit</button>
+</div>
+
+<!-- SERVICES -->
+<div id="services" class="page">
+  <h2>Our Services</h2>
+  <div class="grid">
+    <div class="card"><h3>Manual Testing</h3><p>Test cases, regression, UAT, bug reporting.</p></div>
+    <div class="card"><h3>Automation Testing</h3><p>Selenium, TestNG, automation frameworks.</p></div>
+    <div class="card"><h3>API Testing</h3><p>Postman API validation & response testing.</p></div>
+    <div class="card"><h3>Performance Testing</h3><p>Load & stress testing using JMeter.</p></div>
+    <div class="card"><h3>Security Testing</h3><p>XSS, SQL Injection basic checks.</p></div>
+  </div>
+</div>
+
+<!-- PROCESS -->
+<div id="process" class="page">
+  <h2>Our Process</h2>
+  <div class="grid">
+    <div class="card">Requirement Analysis</div>
+    <div class="card">Test Planning</div>
+    <div class="card">Execution</div>
+    <div class="card">Bug Reporting</div>
+    <div class="card">Delivery</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="page">
+  <h2>About Us</h2>
+  <p>We are a QA service provider focused on delivering reliable, scalable, and secure software solutions for businesses worldwide.</p>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="page">
+  <h2>Contact Us</h2>
+  <p>Email: your@email.com</p>
+  <button class="btn" onclick="alert('Form coming soon!')">Send Message</button>
+</div>
+
+<footer>
+  <p>Ensuring Quality. Delivering Confidence.</p>
+</footer>
+
+<script>
+function showPage(pageId) {
+  const pages = document.querySelectorAll('.page');
+  pages.forEach(p => p.classList.remove('active'));
+  document.getElementById(pageId).classList.add('active');
+}
+</script>
+
+</body>
+</html>
